@@ -1,4 +1,4 @@
-export function onRequestGet(context) {
+export function onRequestGet(context: any) {
   return new Response(
     JSON.stringify({
       message: 'Hello from Cloudflare Workers!',

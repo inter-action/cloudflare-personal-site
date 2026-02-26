@@ -10,8 +10,18 @@ would also try all sorts of vibe-coding techniques. primarily base on **opencode
 
 see [AGENTS.md](./AGENTS.md)
 
+### Git Hooks
+Run `npm run dev:init` to set up git hooks (from `scripts/setup-git-hooks.sh`).
+
+
 ## cloudflare
 
 ```bash
 npx wrangler login
 ```
+
+### cloudflare services usage progress
+
+- [x] pages
+- [x] ...
+

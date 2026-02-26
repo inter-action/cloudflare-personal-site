@@ -12,6 +12,7 @@
     "preview:prod": "wrangler pages dev dist --port 8787",
     "deploy": "npm run build && wrangler pages deploy dist",
     "lint": "prettier --write .",
+    "ts:check": "tsc -p tsconfig.cloudflare.json",
     "fmt": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"api/**/*.ts\""
   },
   "repository": {
