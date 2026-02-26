@@ -1,0 +1,57 @@
+{
+  "name": "cloudflare-personal-site",
+  "version": "1.0.0",
+  "description": "Personal website deployed on Cloudflare Pages with Hono API",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build:api && concurrently \"npm run dev:worker\" \"npm run dev:vite\"",
+    "dev:vite": "vite",
+    "dev:worker": "wrangler pages dev dist --port 8787",
+    "build": "tsc && vite build",
+    "build:api": "./scripts/npm-commands.sh build:api",
+    "preview": "vite preview",
+    "deploy": "./scripts/deploy.sh",
+    "lint": "prettier --write .",
+    "dev:init": "./scripts/setup-git-hooks.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inter-action/cloudflare-personal-site.git"
+  },
+  "keywords": [
+    "cloudflare",
+    "pages",
+    "hono",
+    "react"
+  ],
+  "author": "inter-action",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inter-action/cloudflare-personal-site/issues"
+  },
+  "homepage": "https://github.com/inter-action/cloudflare-personal-site#readme",
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "hono": "^4.7.0",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.6.0",
+    "tw-animate-css": "^1.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241231.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "wrangler": "^4.68.1"
+  }
+}
