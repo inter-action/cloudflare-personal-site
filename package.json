@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "deploy": "./scripts/deploy.sh",
     "lint": "prettier --write .",
+    "fmt": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"api/**/*.ts\"",
     "dev:init": "./scripts/setup-git-hooks.sh"
   },
   "repository": {
