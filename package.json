@@ -1,19 +1,18 @@
 {
   "name": "cloudflare-personal-site",
   "version": "1.0.0",
-  "description": "Personal website deployed on Cloudflare Pages with Hono API",
+  "description": "Personal website deployed on Cloudflare Pages with Functions API",
   "type": "module",
   "scripts": {
-    "dev": "npm run build:api && concurrently \"npm run dev:worker\" \"npm run dev:vite\"",
+    "dev:init": "./scripts/setup-git-hooks.sh",
+    "dev": "concurrently \"npm run dev:vite\" \"npm run dev:worker\"",
     "dev:vite": "vite",
     "dev:worker": "wrangler pages dev dist --port 8787",
-    "build": "tsc && vite build",
-    "build:api": "./scripts/npm-commands.sh build:api",
-    "preview": "vite preview",
-    "deploy": "./scripts/deploy.sh",
+    "build:fe": "vite build",
+    "preview:prod": "wrangler pages dev dist --port 8787",
+    "deploy": "npm run build && wrangler pages deploy dist",
     "lint": "prettier --write .",
-    "fmt": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"api/**/*.ts\"",
-    "dev:init": "./scripts/setup-git-hooks.sh"
+    "fmt": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"api/**/*.ts\""
   },
   "repository": {
     "type": "git",
