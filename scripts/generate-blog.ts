@@ -5,6 +5,7 @@ import { marked } from 'marked';
 import { fileURLToPath } from 'url';
 import { build } from 'vite';
 import postcss from 'postcss';
+import postcssImport from 'postcss-import';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import React from 'react';
@@ -24,7 +25,7 @@ const INDEX_FILE = path.join(BLOG_SOURCE_DIR, 'index.html');
 const bundledAssets = '';
 
 function renderNavbar(activePath: string = '/'): string {
-  return renderToString(React.createElement(Navbar, { activePath }));
+  return renderToString(React.createElement(Navbar, { activePath, showThemeToggle: false }));
 }
 
 interface Post {
@@ -53,7 +54,11 @@ async function buildTailwind(): Promise<void> {
   const css = fs.readFileSync(cssInput, 'utf-8');
   const configPath = path.join(__dirname, '../tailwind.config.blog.js');
 
-  const result = await postcss([tailwindcss({ config: configPath }), autoprefixer()]).process(css, {
+  const result = await postcss([
+    postcssImport(),
+    tailwindcss({ config: configPath }),
+    autoprefixer(),
+  ]).process(css, {
     from: cssInput,
   });
 
@@ -383,7 +388,7 @@ async function buildBlog(): Promise<void> {
         .join('\n');
 
       return `<section class="mb-20" id="${year}">
-  <div class="flex items-baseline gap-4 border-b border-ink/10 pb-4 mb-10">
+  <div class="flex items-baseline gap-4 border-b border-subtle pb-4 mb-10">
     <h2 class="font-serif text-3xl italic">${year}</h2>
   </div>
   <div class="space-y-12">

@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog - {{postCount}} Posts</title>
     <meta name="description" content="Blog posts and articles" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="/assets/blog/blog.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
@@ -12,7 +21,8 @@
     />
   </head>
   <body
-    class="font-display bg-background-light dark:bg-background-dark text-ink dark:text-slate-100 selection:bg-primary/20"
+    class="font-display selection:bg-[var(--primary)]/20"
+    style="background-color: var(--bg); color: var(--text)"
   >
     <div class="relative flex min-h-screen w-full flex-col">
       <!-- Top Navigation Bar -->
@@ -24,38 +34,45 @@
         <aside class="w-full md:w-56 shrink-0">
           <div class="sticky top-32 space-y-8">
             <div>
-              <h3 class="text-xs uppercase tracking-[0.2em] font-bold text-muted-ink mb-6">
+              <h3
+                class="text-xs uppercase tracking-[0.2em] font-bold mb-6"
+                style="color: var(--muted)"
+              >
                 Archive Index
               </h3>
               <ul class="space-y-3">
                 <li>
                   <a
-                    class="group flex items-center justify-between text-ink hover:text-primary transition-colors"
+                    class="group flex items-center justify-between transition-colors"
+                    style="color: var(--text)"
                     href="#2026"
                   >
                     <span class="text-sm font-medium">2026</span>
                     <span
-                      class="text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded"
+                      class="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                      style="background-color: var(--primary); color: var(--bg); opacity: 0.15"
                       >2</span
                     >
                   </a>
                 </li>
                 <li>
                   <a
-                    class="group flex items-center justify-between text-muted-ink hover:text-primary transition-colors"
+                    class="group flex items-center justify-between transition-colors"
+                    style="color: var(--muted)"
                     href="#2025"
                   >
                     <span class="text-sm font-medium">2025</span>
                     <span
-                      class="text-[10px] font-bold bg-ink/5 text-muted-ink px-1.5 py-0.5 rounded"
+                      class="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                      style="background-color: var(--border); color: var(--muted)"
                       >1</span
                     >
                   </a>
                 </li>
               </ul>
             </div>
-            <div class="pt-8 border-t border-ink/5">
-              <p class="text-xs italic text-muted-ink leading-relaxed">
+            <div class="pt-8 border-t" style="border-color: var(--border)">
+              <p class="text-xs italic leading-relaxed" style="color: var(--muted)">
                 Thoughts on software development, web performance, and building better user
                 experiences.
               </p>
@@ -65,31 +82,40 @@
         <!-- Main Content Area -->
         <main class="flex-1 max-w-[720px]">
           <header class="mb-16">
-            <h1 class="font-serif text-5xl md:text-6xl italic mb-6">Chronicles</h1>
-            <p class="text-lg text-muted-ink leading-relaxed max-w-prose">
+            <h1 class="font-serif text-5xl md:text-6xl italic mb-6" style="color: var(--text)">
+              Chronicles
+            </h1>
+            <p class="text-lg leading-relaxed max-w-prose" style="color: var(--muted)">
               Technical deep-dives, tutorials, and musings on building for the modern web.
             </p>
           </header>
           <!-- Posts -->
           <div class="space-y-16">{{posts}}</div>
           <!-- Post Count -->
-          <p class="text-sm text-muted-ink mt-12 pt-8 border-t border-ink/10">
+          <p
+            class="text-sm mt-12 pt-8 border-t"
+            style="color: var(--muted); border-color: var(--border)"
+          >
             {{postCount}} posts
           </p>
         </main>
       </div>
       <!-- Minimalist Footer -->
-      <footer class="mt-auto py-12 border-t border-ink/5 bg-ink/[0.02] dark:bg-slate-900/50">
+      <footer
+        class="mt-auto py-12 border-t"
+        style="border-color: var(--border); background-color: var(--surface)"
+      >
         <div
           class="max-w-[1200px] mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-8"
         >
           <div class="text-center md:text-left">
-            <p class="text-sm font-bold text-ink">© 2024 Miao</p>
-            <p class="text-xs text-muted-ink mt-1">Set in Lexend and Lora.</p>
+            <p class="text-sm font-bold" style="color: var(--text)">© 2026 Miao</p>
+            <p class="text-xs mt-1" style="color: var(--muted)">Set in Lexend and Lora.</p>
           </div>
           <div class="flex gap-8">
             <a
-              class="text-xs uppercase font-bold tracking-widest text-muted-ink hover:text-primary transition-colors"
+              class="text-xs uppercase font-bold tracking-widest transition-colors hover:text-[var(--primary)]"
+              style="color: var(--muted)"
               href="#"
               >GitHub</a
             >

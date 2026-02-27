@@ -1,12 +1,18 @@
+import { Moon, Sun } from 'lucide-react';
+
+import { useTheme } from '@/hooks/useTheme';
+
 interface NavbarProps {
   activePath?: string;
+  showThemeToggle?: boolean;
 }
 
-export function Navbar({ activePath = '/' }: NavbarProps) {
+export function Navbar({ activePath = '/', showThemeToggle = true }: NavbarProps) {
+  const { theme, toggleTheme } = useTheme();
   const isActive = (path: string) => activePath === path;
 
   return (
-    <header className='sticky top-0 z-50 flex items-center justify-between border-b border-ink/5 bg-background-light/80 backdrop-blur-md px-6 md:px-20 py-4 dark:bg-background-dark/80 dark:border-slate-800'>
+    <header className='sticky top-0 z-50 flex items-center justify-between border-b border-custom bg-surface/80 backdrop-blur-md px-6 md:px-20 py-4'>
       <div className='flex items-center gap-12'>
         <div className='flex items-center gap-3'>
           <div className='size-6 text-primary'>
@@ -26,7 +32,7 @@ export function Navbar({ activePath = '/' }: NavbarProps) {
             className={`text-sm font-medium transition-colors ${
               isActive('/')
                 ? 'text-primary underline underline-offset-4'
-                : 'text-ink/70 dark:text-slate-400 hover:text-primary'
+                : 'text-muted hover:text-primary'
             }`}
             href='/'
           >
@@ -36,7 +42,7 @@ export function Navbar({ activePath = '/' }: NavbarProps) {
             className={`text-sm font-medium transition-colors ${
               isActive('/blog')
                 ? 'text-primary underline underline-offset-4'
-                : 'text-ink/70 dark:text-slate-400 hover:text-primary'
+                : 'text-muted hover:text-primary'
             }`}
             href='/blog'
           >
@@ -44,7 +50,20 @@ export function Navbar({ activePath = '/' }: NavbarProps) {
           </a>
         </nav>
       </div>
-      <div className='flex items-center gap-6'>
+      <div className='flex items-center gap-4'>
+        {showThemeToggle && (
+          <button
+            onClick={toggleTheme}
+            className='p-2 rounded-md transition-colors hover:bg-black/5 dark:hover:bg-white/10'
+            aria-label='Toggle theme'
+          >
+            {theme === 'dark' ? (
+              <Sun size={20} className='text-primary' />
+            ) : (
+              <Moon size={20} className='text-muted' />
+            )}
+          </button>
+        )}
         <a
           href='https://github.com/inter-action/cloudflare-personal-site'
           target='_blank'

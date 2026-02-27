@@ -38,12 +38,8 @@ export function FeaturedWorks() {
     <section className='max-w-[1100px] mx-auto px-6 py-20'>
       <div className='flex justify-between items-end mb-12'>
         <div className='space-y-2'>
-          <h2 className='text-ink dark:text-slate-100 text-3xl font-serif italic font-bold'>
-            Selected Collections
-          </h2>
-          <p className='text-ink/60 dark:text-slate-400 text-sm font-display tracking-wide'>
-            01 — DIGITAL MANUSCRIPTS
-          </p>
+          <h2 className='text-3xl font-serif italic font-bold'>Selected Collections</h2>
+          <p className='text-sm font-display tracking-wide text-muted'>01 — DIGITAL MANUSCRIPTS</p>
         </div>
         <a
           className='text-primary font-bold text-sm tracking-widest uppercase border-b-2 border-primary/20 pb-1 hover:border-primary transition-all'
@@ -55,22 +51,20 @@ export function FeaturedWorks() {
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
         {projects.map((project) => (
           <div key={project.id} className='group cursor-pointer'>
-            <div className='aspect-[3/4] overflow-hidden bg-stone-100 dark:bg-slate-800 mb-6 border border-stone-200 dark:border-slate-700 transition-transform duration-500 group-hover:-translate-y-2'>
+            <div className='aspect-[3/4] overflow-hidden bg-surface mb-6 border border-custom transition-transform duration-500 group-hover:-translate-y-2'>
               <div
                 className='w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105'
                 style={{ backgroundImage: `url("${project.image}")` }}
               />
             </div>
             <div className='space-y-2'>
-              <p className='text-[10px] font-bold tracking-[0.3em] uppercase text-ink/40 dark:text-slate-500'>
+              <p className='text-[10px] font-bold tracking-[0.3em] uppercase text-muted opacity-60'>
                 {project.category}
               </p>
               <h3 className='text-xl font-serif font-bold group-hover:text-primary transition-colors'>
                 {project.title}
               </h3>
-              <p className='text-ink/60 dark:text-slate-400 text-sm leading-relaxed'>
-                {project.description}
-              </p>
+              <p className='text-sm leading-relaxed text-muted'>{project.description}</p>
             </div>
           </div>
         ))}

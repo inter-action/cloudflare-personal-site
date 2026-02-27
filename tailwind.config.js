@@ -5,11 +5,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#195de6',
+        primary: 'var(--primary)',
         paper: '#FDFCF0',
         ink: '#1A1A1A',
         'background-light': '#FDFCF0',
         'background-dark': '#111621',
+        surface: 'var(--surface)',
+        muted: 'var(--muted)',
       },
       fontFamily: {
         display: ['Lexend', 'sans-serif'],

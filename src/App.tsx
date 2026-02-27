@@ -19,7 +19,7 @@ function App() {
         <main className='flex-1'>
           <Hero />
           <div className='max-w-[1100px] mx-auto px-6'>
-            <div className='h-px w-full bg-stone-200 dark:bg-slate-800' />
+            <div className='h-px w-full bg-border-subtle' />
           </div>
           <Skills />
           <BlogSection />

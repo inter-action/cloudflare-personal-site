@@ -1,0 +1,468 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Julian Vermeer | Portfolio - Dark Scholarly Edition</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400;0,700;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#C5A059', // Muted Gold
+              obsidian: '#121212',
+              'parchment-dim': '#A39E8D',
+              'gold-accent': '#D4AF37',
+              'ink-dark': '#0A0A0A',
+            },
+            fontFamily: {
+              display: ['Lexend', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.125rem',
+              lg: '0.25rem',
+              xl: '0.5rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      :root {
+        --bg-color: #121212;
+        --text-gold: #c5a059;
+        --text-parchment: #d1cec5;
+      }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-parchment);
+      }
+      .grain-texture {
+        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB2mVN_z45X1oLrqQ6T-UdDqn9Y8-9MU8UmcfXkwF7yppnyhbZstPwVfB6gV-7Jgs0fbxC8pz5gobULLh-vP1z9FwEvXBDuPH2VRVQjUVSzHwdixMNNUyS2SRMjdqs2Ypt4OHLcvTmDtO2R-aMmW0yubY37aDaTUMwscTftvrxJ0usGOnpNXKm6MHo_Aap4RkONh5j8eoE1uogy0cs-BUfuNpvVEixzu22miEKdoBZdQ__EOwlT7zDZG4qMGc3yrKsLNngYtS3O7Xyt);
+        opacity: 0.3;
+      }
+      .gold-gradient-border {
+        border-image: linear-gradient(to bottom, #c5a059, #4a3b1f) 1;
+      }
+      ::selection {
+        background-color: rgba(197, 160, 89, 0.2);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="font-display bg-obsidian text-parchment-dim selection:bg-primary/20">
+    <div class="relative flex min-h-screen w-full flex-col">
+      <div class="pointer-events-none fixed inset-0 grain-texture z-0"></div>
+      <div class="relative z-10 flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-white/10 px-6 md:px-20 py-8 sticky top-0 bg-obsidian/90 backdrop-blur-xl z-50"
+        >
+          <div class="flex items-center gap-3 text-primary">
+            <div
+              class="size-9 flex items-center justify-center border border-primary/40 bg-ink-dark text-primary rounded-sm shadow-[0_0_15px_rgba(197,160,89,0.1)]"
+            >
+              <span class="material-symbols-outlined text-xl">menu_book</span>
+            </div>
+            <h2 class="text-xl font-bold tracking-[0.1em] font-serif italic text-white">Archive</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-12">
+            <nav class="hidden md:flex items-center gap-10">
+              <a
+                class="text-parchment-dim hover:text-primary transition-colors text-xs font-bold tracking-[0.2em] uppercase"
+                href="#"
+                >Home</a
+              >
+              <a
+                class="text-parchment-dim/60 hover:text-primary transition-colors text-xs font-bold tracking-[0.2em] uppercase"
+                href="#"
+                >Blog</a
+              >
+              <a
+                class="text-parchment-dim/60 hover:text-primary transition-colors text-xs font-bold tracking-[0.2em] uppercase"
+                href="#"
+                >Projects</a
+              >
+              <a
+                class="text-parchment-dim/60 hover:text-primary transition-colors text-xs font-bold tracking-[0.2em] uppercase"
+                href="#"
+                >About</a
+              >
+            </nav>
+            <button
+              class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-sm h-10 px-5 border border-primary/50 text-primary text-xs font-bold tracking-[0.2em] uppercase hover:bg-primary hover:text-obsidian transition-all duration-300"
+            >
+              <span>Contact</span>
+            </button>
+          </div>
+        </header>
+        <main class="flex-1">
+          <div class="max-w-[1200px] mx-auto px-6 py-20 md:py-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div class="flex flex-col gap-10">
+                <div class="space-y-6">
+                  <div class="flex items-center gap-3">
+                    <div class="h-px w-8 bg-primary/50"></div>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-primary"
+                      >Front-end Developer &amp; Curator</span
+                    >
+                  </div>
+                  <h1
+                    class="text-white text-6xl md:text-8xl font-serif font-bold leading-[1] italic tracking-tight"
+                  >
+                    Julian <br /><span class="text-primary/90">Vermeer</span>
+                  </h1>
+                  <p
+                    class="text-parchment-dim text-lg md:text-xl font-serif leading-relaxed max-w-md opacity-80"
+                  >
+                    Architecting digital landscapes with the precision of a classical artisan and
+                    the philosophical depth of a scholar.
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-6">
+                  <button
+                    class="flex items-center justify-center rounded-sm h-14 px-10 bg-primary text-obsidian font-bold text-xs tracking-[0.25em] uppercase hover:bg-white transition-colors duration-500"
+                  >
+                    Explore Works
+                  </button>
+                  <button
+                    class="flex items-center justify-center rounded-sm h-14 px-8 border border-white/20 text-white font-bold text-xs tracking-[0.25em] uppercase hover:border-primary hover:text-primary transition-all duration-500"
+                  >
+                    The Journal
+                  </button>
+                </div>
+              </div>
+              <div class="relative flex justify-center items-center">
+                <div
+                  class="w-full aspect-[4/5] bg-ink-dark border border-white/5 p-4 shadow-2xl relative"
+                >
+                  <div
+                    class="absolute inset-0 border border-primary/20 scale-[0.97] pointer-events-none"
+                  ></div>
+                  <div
+                    class="w-full h-full border border-white/10 flex items-center justify-center relative overflow-hidden bg-[#0D0D0D]"
+                  >
+                    <div
+                      class="absolute inset-0 opacity-40 flex items-center justify-center overflow-hidden"
+                    >
+                      <svg
+                        class="text-primary/30"
+                        height="100%"
+                        preserveAspectRatio="none"
+                        viewBox="0 0 100 100"
+                        width="100%"
+                      >
+                        <line
+                          stroke="currentColor"
+                          stroke-width="0.2"
+                          x1="0"
+                          x2="100"
+                          y1="0"
+                          y2="100"
+                        ></line>
+                        <line
+                          stroke="currentColor"
+                          stroke-width="0.2"
+                          x1="100"
+                          x2="0"
+                          y1="0"
+                          y2="100"
+                        ></line>
+                        <circle
+                          cx="50"
+                          cy="50"
+                          fill="none"
+                          r="35"
+                          stroke="currentColor"
+                          stroke-width="0.2"
+                        ></circle>
+                        <circle
+                          cx="50"
+                          cy="50"
+                          fill="none"
+                          r="15"
+                          stroke="currentColor"
+                          stroke-width="0.1"
+                        ></circle>
+                        <rect
+                          fill="none"
+                          height="50"
+                          stroke="currentColor"
+                          stroke-width="0.1"
+                          transform="rotate(45 50 50)"
+                          width="50"
+                          x="25"
+                          y="25"
+                        ></rect>
+                      </svg>
+                    </div>
+                    <div
+                      class="bg-center bg-no-repeat bg-contain w-4/5 h-4/5 z-10 filter brightness-110 contrast-125 grayscale invert"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBS9U3jsWnBmqEmWhFbUQ_3AHx7vv_VymL2e_JxnfAqVtp-4YQ8eSos5kSNF9Mmd74lDC9gFCJQkry4SxNrVVYpuEIs_QNCuxzQkWkC_4MYWIVoJfmGaDNnDI_Z62JTlk0wKTrjJ6vcNZEFUcVkwj49Md8AeYVQ2bVKXPeE2EdUo1AEys6kyzKONBsMOmj8cGVoL3jn-upr2zzYpOiuCvUlgo4OPx3WpbA_hvzZSETJEyjjN2xHnkJb5g08zoQGGNaKcNe5YQMEQCBQ');
+                        mix-blend-mode: screen;
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="absolute -bottom-6 -right-6 hidden md:block bg-obsidian border border-white/10 p-6 max-w-[180px] shadow-2xl"
+                >
+                  <p class="text-[9px] font-bold tracking-[0.3em] uppercase text-primary mb-2">
+                    Ref. No. 882
+                  </p>
+                  <p class="text-[11px] font-serif italic text-parchment-dim/80">
+                    "Code is the modern ink, permanent and structural."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="max-w-[1200px] mx-auto px-6">
+            <div
+              class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
+            ></div>
+          </div>
+          <section class="max-w-[1200px] mx-auto px-6 py-24">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-4">
+              <div class="space-y-3">
+                <h2 class="text-white text-4xl font-serif italic font-bold tracking-tight">
+                  Selected Collections
+                </h2>
+                <div class="flex items-center gap-3">
+                  <span class="text-primary text-[10px] font-bold tracking-[0.4em]">VOL. 01</span>
+                  <p class="text-parchment-dim/40 text-[10px] font-bold tracking-[0.4em] uppercase">
+                    — Digital Manuscripts
+                  </p>
+                </div>
+              </div>
+              <a
+                class="text-primary font-bold text-[10px] tracking-[0.3em] uppercase border-b border-primary/30 pb-1 hover:text-white hover:border-white transition-all duration-300"
+                href="#"
+                >View Index (12)</a
+              >
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div class="group cursor-pointer">
+                <div
+                  class="aspect-[3/4] overflow-hidden bg-ink-dark mb-8 border border-white/5 transition-all duration-700 group-hover:border-primary/40 group-hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]"
+                >
+                  <div
+                    class="w-full h-full bg-cover bg-center grayscale contrast-125 transition-all duration-1000 group-hover:scale-110 group-hover:grayscale-0"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBw2kQ6xPA3saMgBVDa1nmAc77DhKw58KMG28rfj3gY4IK8pDEFcFhPm3B4MLk97_dbEirYmvTewhVbPB9oeP0bcfcPqRE561OS_w75kPQ4EMGJzgvc127aGs7SzbSW9xxkMviQWkNARCk9D9ErPuYXMIujVOJU2qkBsd031KhGl9gZkTTVPgpRRhztAxzBfmA-aRsHmMe3nvlwXo7ewDD6n3apGm3RM2Q_8f8cZRywLNQlIbiGeqSnTMxUcZq8trDs8u7sc_ESAUs-');
+                    "
+                  ></div>
+                </div>
+                <div class="space-y-3">
+                  <p class="text-[9px] font-bold tracking-[0.4em] uppercase text-primary/60">
+                    Editorial Design
+                  </p>
+                  <h3
+                    class="text-xl font-serif font-bold text-white group-hover:text-primary transition-colors duration-300"
+                  >
+                    The Scholarly Archive
+                  </h3>
+                  <p class="text-parchment-dim/60 text-sm leading-relaxed font-serif italic">
+                    A digital preservation project for historical documents.
+                  </p>
+                </div>
+              </div>
+              <div class="group cursor-pointer">
+                <div
+                  class="aspect-[3/4] overflow-hidden bg-ink-dark mb-8 border border-white/5 transition-all duration-700 group-hover:border-primary/40 group-hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]"
+                >
+                  <div
+                    class="w-full h-full bg-cover bg-center grayscale contrast-125 transition-all duration-1000 group-hover:scale-110 group-hover:grayscale-0"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDy3OO9Mh_Q3MflYGGyGW3FpBCFcPik3mxwPoWql83GIgLiLVuNez0kLLYf2fmdWd7lJblasCAiTtMBSBMOJhHMLa8J0uea5HTwIBK9X1HEEGYIvbTIZ5TEf3LpwuDfG4mB5Gfbh3jSZteVOASYBqLi0lDdJT2LCfkDJG2lqUDAf2Pc9GgQ-wbhkCRrzYEbqar2NIllQ6DXFbKpuCP_qfhGXPlnoVm5EA15KTJ7G_BTSC4yDFaMrjT7mpGjrVByjIuJNGDU7z5fk1C_');
+                    "
+                  ></div>
+                </div>
+                <div class="space-y-3">
+                  <p class="text-[9px] font-bold tracking-[0.4em] uppercase text-primary/60">
+                    React Architecture
+                  </p>
+                  <h3
+                    class="text-xl font-serif font-bold text-white group-hover:text-primary transition-colors duration-300"
+                  >
+                    Minimalist Blog Kit
+                  </h3>
+                  <p class="text-parchment-dim/60 text-sm leading-relaxed font-serif italic">
+                    An open-source boilerplate for focused writers.
+                  </p>
+                </div>
+              </div>
+              <div class="group cursor-pointer">
+                <div
+                  class="aspect-[3/4] overflow-hidden bg-ink-dark mb-8 border border-white/5 transition-all duration-700 group-hover:border-primary/40 group-hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]"
+                >
+                  <div
+                    class="w-full h-full bg-cover bg-center grayscale contrast-125 transition-all duration-1000 group-hover:scale-110 group-hover:grayscale-0"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjV05vhLrKAhmp_K47OojDwqZyGR83Rm5_WYHTAc69_XXc8w2smgqj9uPyyU-U4xi5MNUvkyeURbZPGoZoP_Bh7_d9M66zBPzK4ghZpVpYfZ2-eG2SQGU1HQ9can1xRpqMmIN_ZT7qYX-vUG2yycVssX9iYZJCZ4i7B_NBwVD2kaFU-XNmuZq6rZavreJZ3eyVs6VMpy7Njy7vOsuQk457T1dbutImkLpgRj8Q6IG4Z2W6K0XjBGnPmw_ZwOCGIHndD_5CWW2lqDJz');
+                    "
+                  ></div>
+                </div>
+                <div class="space-y-3">
+                  <p class="text-[9px] font-bold tracking-[0.4em] uppercase text-primary/60">
+                    Typography / UI
+                  </p>
+                  <h3
+                    class="text-xl font-serif font-bold text-white group-hover:text-primary transition-colors duration-300"
+                  >
+                    Curated Portfolio v2
+                  </h3>
+                  <p class="text-parchment-dim/60 text-sm leading-relaxed font-serif italic">
+                    High-end showcase for creative professionals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="bg-ink-dark border-y border-white/5 py-28 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-20 opacity-[0.03] pointer-events-none">
+              <span class="material-symbols-outlined text-[300px]">auto_stories</span>
+            </div>
+            <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div>
+                  <h2 class="text-3xl font-serif italic font-bold mb-12 text-white">
+                    Latest Journal Entries
+                  </h2>
+                  <div class="space-y-16">
+                    <article
+                      class="group relative pl-8 border-l border-white/10 hover:border-primary transition-colors duration-500"
+                    >
+                      <time class="text-[9px] font-bold tracking-[0.3em] text-primary uppercase"
+                        >Oct 24, 2023</time
+                      >
+                      <h4
+                        class="text-2xl font-serif font-bold mt-3 text-white group-hover:text-primary transition-colors cursor-pointer"
+                      >
+                        The Ethics of Minimalist Interface Design
+                      </h4>
+                      <p
+                        class="text-parchment-dim/50 mt-4 text-sm leading-relaxed line-clamp-2 max-w-md font-serif italic"
+                      >
+                        Exploring how white space influences cognitive load and user trust in modern
+                        web applications.
+                      </p>
+                    </article>
+                    <article
+                      class="group relative pl-8 border-l border-white/10 hover:border-primary transition-colors duration-500"
+                    >
+                      <time class="text-[9px] font-bold tracking-[0.3em] text-primary uppercase"
+                        >Sep 12, 2023</time
+                      >
+                      <h4
+                        class="text-2xl font-serif font-bold mt-3 text-white group-hover:text-primary transition-colors cursor-pointer"
+                      >
+                        React and the Renaissance of Web Craft
+                      </h4>
+                      <p
+                        class="text-parchment-dim/50 mt-4 text-sm leading-relaxed line-clamp-2 max-w-md font-serif italic"
+                      >
+                        How functional programming patterns reflect the modular philosophy of early
+                        typography.
+                      </p>
+                    </article>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col justify-center items-center text-center p-12 border border-white/5 bg-obsidian rounded-sm shadow-2xl"
+                >
+                  <div
+                    class="size-16 flex items-center justify-center border border-primary/20 rounded-full mb-8"
+                  >
+                    <span class="material-symbols-outlined text-3xl text-primary">mail</span>
+                  </div>
+                  <h3 class="text-3xl font-serif italic font-bold mb-4 text-white">
+                    Subscribe to the Archive
+                  </h3>
+                  <p
+                    class="text-parchment-dim/60 text-sm mb-10 max-w-xs font-serif leading-relaxed"
+                  >
+                    Monthly insights on frontend craft, design systems, and scholarly web
+                    development.
+                  </p>
+                  <div class="w-full flex flex-col sm:flex-row gap-0">
+                    <input
+                      class="flex-1 bg-ink-dark border border-white/10 text-white text-sm p-4 focus:ring-0 focus:border-primary outline-none transition-colors"
+                      placeholder="Email Address"
+                      type="email"
+                    />
+                    <button
+                      class="bg-primary text-obsidian px-8 py-4 font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-white transition-all duration-300"
+                    >
+                      Join
+                    </button>
+                  </div>
+                  <p class="mt-6 text-[9px] uppercase tracking-[0.2em] text-parchment-dim/30">
+                    Privacy Protected — No Spam
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer class="border-t border-white/10 py-16 px-6 md:px-20 bg-obsidian">
+          <div
+            class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-12"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="size-8 flex items-center justify-center border border-white/10 text-primary rounded-sm bg-ink-dark"
+              >
+                <span class="material-symbols-outlined text-sm">history_edu</span>
+              </div>
+              <div>
+                <p class="text-[10px] font-bold tracking-[0.4em] uppercase text-white/80">
+                  © 2024 Julian Vermeer
+                </p>
+                <p class="text-[9px] tracking-[0.2em] text-parchment-dim/40 uppercase mt-1">
+                  Amsterdam, Netherlands
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-10">
+              <a
+                class="text-parchment-dim/40 hover:text-primary transition-all duration-300 text-[10px] font-bold tracking-[0.3em] uppercase"
+                href="#"
+                >LinkedIn</a
+              >
+              <a
+                class="text-parchment-dim/40 hover:text-primary transition-all duration-300 text-[10px] font-bold tracking-[0.3em] uppercase"
+                href="#"
+                >GitHub</a
+              >
+              <a
+                class="text-parchment-dim/40 hover:text-primary transition-all duration-300 text-[10px] font-bold tracking-[0.3em] uppercase"
+                href="#"
+                >Twitter</a
+              >
+            </div>
+          </div>
+          <div class="max-w-[1200px] mx-auto mt-16 flex justify-center">
+            <div class="flex items-center gap-2 opacity-20">
+              <div class="h-px w-12 bg-white"></div>
+              <span class="material-symbols-outlined text-sm text-white">fingerprint</span>
+              <div class="h-px w-12 bg-white"></div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
