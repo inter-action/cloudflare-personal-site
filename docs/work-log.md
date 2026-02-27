@@ -1,9 +1,9 @@
-
 - 2026-02-27
   - move cors support to vite config
   - clean ts type
   - SSG blog content
   - mv build script in shell script
+  - overhual design: create a light version
 
 - 2026-02-26
   - refactoring routes

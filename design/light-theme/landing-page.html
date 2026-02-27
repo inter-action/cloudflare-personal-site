@@ -1,0 +1,409 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolio Landing Page - Scholarly Style</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400;0,700;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#195de6',
+              paper: '#FDFCF0',
+              ink: '#1A1A1A',
+              'background-light': '#FDFCF0',
+              'background-dark': '#111621',
+            },
+            fontFamily: {
+              display: ['Lexend', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #fdfcf0;
+        color: #1a1a1a;
+      }
+      .paper-texture {
+        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCnpR3JblFJbuOLWdSQ5gbpGxAduLSZlG6NBKOitKdDXR_zky3CcMvm23jS3lA7rfFvN1p9OaOT8Fx_MbSwCo8c6evoli0VDhSEGuulw64WAOAy4DprL_6my5zuLDuIxx37gzE9mvS7MfLyb4eEdyLU5iPi0AtFGgLWxpd7c1fh6vuujReDsbhGV1nEk2JyFN0WF2rdixlMeem-NlNVQYQR6qw4XEXDS0P0H0lG_T1lV19KwOAaXAKVQd2v_7e7Nsl3nusf72UdBQOF);
+      }
+    </style>
+  </head>
+  <body class="font-display bg-background-light dark:bg-background-dark selection:bg-primary/20">
+    <div class="relative flex min-h-screen w-full flex-col paper-texture">
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Navigation -->
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-stone-200 dark:border-slate-800 px-6 md:px-20 py-6 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-50"
+        >
+          <div class="flex items-center gap-3 text-ink dark:text-slate-100">
+            <div
+              class="size-8 flex items-center justify-center bg-ink dark:bg-slate-100 text-white dark:text-background-dark rounded-sm"
+            >
+              <span class="material-symbols-outlined text-xl">menu_book</span>
+            </div>
+            <h2 class="text-xl font-bold tracking-tight font-serif italic">Archive</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-10">
+            <nav class="hidden md:flex items-center gap-10">
+              <a
+                class="text-ink/70 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+                href="#"
+                >Home</a
+              >
+              <a
+                class="text-ink/70 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+                href="#"
+                >Blog</a
+              >
+              <a
+                class="text-ink/70 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+                href="#"
+                >Projects</a
+              >
+              <a
+                class="text-ink/70 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+                href="#"
+                >About</a
+              >
+            </nav>
+            <button
+              class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-sm h-10 px-5 bg-primary text-white text-sm font-bold tracking-wide hover:opacity-90 transition-opacity"
+            >
+              <span>Contact</span>
+            </button>
+          </div>
+        </header>
+        <main class="flex-1">
+          <!-- Hero Section -->
+          <div class="max-w-[1100px] mx-auto px-6 py-16 md:py-28">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div class="flex flex-col gap-8">
+                <div class="space-y-4">
+                  <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary"
+                    >Front-end Developer &amp; Curator</span
+                  >
+                  <h1
+                    class="text-ink dark:text-slate-100 text-5xl md:text-7xl font-serif font-bold leading-[1.1] italic"
+                  >
+                    Julian <br />Vermeer
+                  </h1>
+                  <p
+                    class="text-ink/80 dark:text-slate-300 text-lg md:text-xl font-display leading-relaxed max-w-md"
+                  >
+                    Building digital experiences with the precision of a craftsman and the soul of a
+                    scholar.
+                  </p>
+                </div>
+                <div class="flex gap-4">
+                  <button
+                    class="flex items-center justify-center rounded-sm h-12 px-8 bg-ink dark:bg-slate-100 text-white dark:text-background-dark font-bold text-sm tracking-widest uppercase hover:bg-primary transition-colors"
+                  >
+                    Explore Works
+                  </button>
+                  <button
+                    class="flex items-center justify-center rounded-sm h-12 px-6 border border-ink/20 dark:border-slate-700 text-ink dark:text-slate-300 font-bold text-sm tracking-widest uppercase hover:bg-stone-100 dark:hover:bg-slate-800 transition-colors"
+                  >
+                    The Journal
+                  </button>
+                </div>
+              </div>
+              <div class="relative flex justify-center items-center">
+                <div
+                  class="w-full aspect-[4/5] bg-stone-100 dark:bg-slate-800 rounded-sm overflow-hidden border border-stone-200 dark:border-slate-700 p-8"
+                >
+                  <div
+                    class="w-full h-full border border-stone-300 dark:border-slate-600 flex items-center justify-center relative"
+                  >
+                    <!-- Geometric Abstract Illustration -->
+                    <div
+                      class="absolute inset-0 opacity-10 dark:opacity-20 flex items-center justify-center overflow-hidden"
+                    >
+                      <svg
+                        height="100%"
+                        preserveaspectratio="none"
+                        viewbox="0 0 100 100"
+                        width="100%"
+                      >
+                        <line
+                          stroke="currentColor"
+                          stroke-width="0.5"
+                          x1="0"
+                          x2="100"
+                          y1="0"
+                          y2="100"
+                        ></line>
+                        <line
+                          stroke="currentColor"
+                          stroke-width="0.5"
+                          x1="100"
+                          x2="0"
+                          y1="0"
+                          y2="100"
+                        ></line>
+                        <circle
+                          cx="50"
+                          cy="50"
+                          fill="none"
+                          r="30"
+                          stroke="currentColor"
+                          stroke-width="0.5"
+                        ></circle>
+                      </svg>
+                    </div>
+                    <div
+                      class="bg-center bg-no-repeat bg-contain w-4/5 h-4/5 z-10"
+                      data-alt="A minimalist line art sketch of a person looking thoughtful"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBS9U3jsWnBmqEmWhFbUQ_3AHx7vv_VymL2e_JxnfAqVtp-4YQ8eSos5kSNF9Mmd74lDC9gFCJQkry4SxNrVVYpuEIs_QNCuxzQkWkC_4MYWIVoJfmGaDNnDI_Z62JTlk0wKTrjJ6vcNZEFUcVkwj49Md8AeYVQ2bVKXPeE2EdUo1AEys6kyzKONBsMOmj8cGVoL3jn-upr2zzYpOiuCvUlgo4OPx3WpbA_hvzZSETJEyjjN2xHnkJb5g08zoQGGNaKcNe5YQMEQCBQ');
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section Divider -->
+          <div class="max-w-[1100px] mx-auto px-6">
+            <div class="h-px w-full bg-stone-200 dark:bg-slate-800"></div>
+          </div>
+          <!-- Featured Works -->
+          <section class="max-w-[1100px] mx-auto px-6 py-20">
+            <div class="flex justify-between items-end mb-12">
+              <div class="space-y-2">
+                <h2 class="text-ink dark:text-slate-100 text-3xl font-serif italic font-bold">
+                  Selected Collections
+                </h2>
+                <p class="text-ink/60 dark:text-slate-400 text-sm font-display tracking-wide">
+                  01 — DIGITAL MANUSCRIPTS
+                </p>
+              </div>
+              <a
+                class="text-primary font-bold text-sm tracking-widest uppercase border-b-2 border-primary/20 pb-1 hover:border-primary transition-all"
+                href="#"
+                >View All Cases</a
+              >
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Project Card 1 -->
+              <div class="group cursor-pointer">
+                <div
+                  class="aspect-[3/4] overflow-hidden bg-stone-100 dark:bg-slate-800 mb-6 border border-stone-200 dark:border-slate-700 transition-transform duration-500 group-hover:-translate-y-2"
+                >
+                  <div
+                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Minimalist website interface with serif typography"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBw2kQ6xPA3saMgBVDa1nmAc77DhKw58KMG28rfj3gY4IK8pDEFcFhPm3B4MLk97_dbEirYmvTewhVbPB9oeP0bcfcPqRE561OS_w75kPQ4EMGJzgvc127aGs7SzbSW9xxkMviQWkNARCk9D9ErPuYXMIujVOJU2qkBsd031KhGl9gZkTTVPgpRRhztAxzBfmA-aRsHmMe3nvlwXo7ewDD6n3apGm3RM2Q_8f8cZRywLNQlIbiGeqSnTMxUcZq8trDs8u7sc_ESAUs-');
+                    "
+                  ></div>
+                </div>
+                <div class="space-y-2">
+                  <p
+                    class="text-[10px] font-bold tracking-[0.3em] uppercase text-ink/40 dark:text-slate-500"
+                  >
+                    Editorial Design
+                  </p>
+                  <h3
+                    class="text-xl font-serif font-bold group-hover:text-primary transition-colors"
+                  >
+                    The Scholarly Archive
+                  </h3>
+                  <p class="text-ink/60 dark:text-slate-400 text-sm leading-relaxed">
+                    A digital preservation project for historical documents.
+                  </p>
+                </div>
+              </div>
+              <!-- Project Card 2 -->
+              <div class="group cursor-pointer">
+                <div
+                  class="aspect-[3/4] overflow-hidden bg-stone-100 dark:bg-slate-800 mb-6 border border-stone-200 dark:border-slate-700 transition-transform duration-500 group-hover:-translate-y-2"
+                >
+                  <div
+                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Abstract UI layout with clean lines and spacing"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDy3OO9Mh_Q3MflYGGyGW3FpBCFcPik3mxwPoWql83GIgLiLVuNez0kLLYf2fmdWd7lJblasCAiTtMBSBMOJhHMLa8J0uea5HTwIBK9X1HEEGYIvbTIZ5TEf3LpwuDfG4mB5Gfbh3jSZteVOASYBqLi0lDdJT2LCfkDJG2lqUDAf2Pc9GgQ-wbhkCRrzYEbqar2NIllQ6DXFbKpuCP_qfhGXPlnoVm5EA15KTJ7G_BTSC4yDFaMrjT7mpGjrVByjIuJNGDU7z5fk1C_');
+                    "
+                  ></div>
+                </div>
+                <div class="space-y-2">
+                  <p
+                    class="text-[10px] font-bold tracking-[0.3em] uppercase text-ink/40 dark:text-slate-500"
+                  >
+                    React Architecture
+                  </p>
+                  <h3
+                    class="text-xl font-serif font-bold group-hover:text-primary transition-colors"
+                  >
+                    Minimalist Blog Kit
+                  </h3>
+                  <p class="text-ink/60 dark:text-slate-400 text-sm leading-relaxed">
+                    An open-source boilerplate for focused writers.
+                  </p>
+                </div>
+              </div>
+              <!-- Project Card 3 -->
+              <div class="group cursor-pointer">
+                <div
+                  class="aspect-[3/4] overflow-hidden bg-stone-100 dark:bg-slate-800 mb-6 border border-stone-200 dark:border-slate-700 transition-transform duration-500 group-hover:-translate-y-2"
+                >
+                  <div
+                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Sophisticated typography layout on a neutral background"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjV05vhLrKAhmp_K47OojDwqZyGR83Rm5_WYHTAc69_XXc8w2smgqj9uPyyU-U4xi5MNUvkyeURbZPGoZoP_Bh7_d9M66zBPzK4ghZpVpYfZ2-eG2SQGU1HQ9can1xRpqMmIN_ZT7qYX-vUG2yycVssX9iYZJCZ4i7B_NBwVD2kaFU-XNmuZq6rZavreJZ3eyVs6VMpy7Njy7vOsuQk457T1dbutImkLpgRj8Q6IG4Z2W6K0XjBGnPmw_ZwOCGIHndD_5CWW2lqDJz');
+                    "
+                  ></div>
+                </div>
+                <div class="space-y-2">
+                  <p
+                    class="text-[10px] font-bold tracking-[0.3em] uppercase text-ink/40 dark:text-slate-500"
+                  >
+                    Typography / UI
+                  </p>
+                  <h3
+                    class="text-xl font-serif font-bold group-hover:text-primary transition-colors"
+                  >
+                    Curated Portfolio v2
+                  </h3>
+                  <p class="text-ink/60 dark:text-slate-400 text-sm leading-relaxed">
+                    High-end showcase for creative professionals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Latest Thoughts / Journal -->
+          <section class="bg-stone-100 dark:bg-slate-900/50 py-24">
+            <div class="max-w-[1100px] mx-auto px-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                  <h2 class="text-3xl font-serif italic font-bold mb-8">Latest Journal Entries</h2>
+                  <div class="space-y-12">
+                    <article class="group">
+                      <time class="text-[10px] font-bold tracking-widest text-primary uppercase"
+                        >Oct 24, 2023</time
+                      >
+                      <h4
+                        class="text-xl font-serif font-bold mt-2 group-hover:underline cursor-pointer"
+                      >
+                        The Ethics of Minimalist Interface Design
+                      </h4>
+                      <p class="text-ink/60 dark:text-slate-400 mt-2 text-sm line-clamp-2">
+                        Exploring how white space influences cognitive load and user trust in modern
+                        web applications.
+                      </p>
+                    </article>
+                    <article class="group">
+                      <time class="text-[10px] font-bold tracking-widest text-primary uppercase"
+                        >Sep 12, 2023</time
+                      >
+                      <h4
+                        class="text-xl font-serif font-bold mt-2 group-hover:underline cursor-pointer"
+                      >
+                        React and the Renaissance of Web Craft
+                      </h4>
+                      <p class="text-ink/60 dark:text-slate-400 mt-2 text-sm line-clamp-2">
+                        How functional programming patterns reflect the modular philosophy of early
+                        typography.
+                      </p>
+                    </article>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col justify-center items-center text-center p-12 border border-ink/5 dark:border-white/5 bg-background-light dark:bg-background-dark rounded-sm"
+                >
+                  <span class="material-symbols-outlined text-4xl text-primary mb-6">mail</span>
+                  <h3 class="text-2xl font-serif italic font-bold mb-4">
+                    Subscribe to the Archive
+                  </h3>
+                  <p class="text-ink/60 dark:text-slate-400 text-sm mb-8 max-w-xs">
+                    Monthly insights on frontend craft, design systems, and scholarly web
+                    development.
+                  </p>
+                  <div class="w-full flex gap-2">
+                    <input
+                      class="flex-1 bg-stone-50 dark:bg-slate-800 border-stone-200 dark:border-slate-700 text-sm p-3 focus:ring-primary focus:border-primary outline-none"
+                      placeholder="Your email address"
+                      type="email"
+                    />
+                    <button
+                      class="bg-primary text-white px-6 font-bold text-xs uppercase tracking-widest hover:opacity-90"
+                    >
+                      Join
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <!-- Footer -->
+        <footer class="border-t border-stone-200 dark:border-slate-800 py-12 px-6 md:px-20">
+          <div
+            class="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="size-6 flex items-center justify-center bg-ink/10 dark:bg-slate-800 text-ink dark:text-slate-300 rounded-sm"
+              >
+                <span class="material-symbols-outlined text-sm">history_edu</span>
+              </div>
+              <p
+                class="text-xs font-bold tracking-widest uppercase text-ink/50 dark:text-slate-500"
+              >
+                © 2024 Julian Vermeer — Amsterdam
+              </p>
+            </div>
+            <div class="flex gap-8">
+              <a
+                class="text-ink/40 dark:text-slate-500 hover:text-primary transition-colors text-xs font-bold tracking-widest uppercase"
+                href="#"
+                >LinkedIn</a
+              >
+              <a
+                class="text-ink/40 dark:text-slate-500 hover:text-primary transition-colors text-xs font-bold tracking-widest uppercase"
+                href="#"
+                >GitHub</a
+              >
+              <a
+                class="text-ink/40 dark:text-slate-500 hover:text-primary transition-colors text-xs font-bold tracking-widest uppercase"
+                href="#"
+                >Twitter</a
+              >
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,396 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400;0,700;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#195de6',
+              'background-light': '#FDFCF0',
+              'background-dark': '#111621',
+              paper: '#FDFCF0',
+              ink: '#1a1a1a',
+              'muted-ink': '#5f5f5f',
+            },
+            fontFamily: {
+              display: ['Lexend', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #fdfcf0;
+        color: #1a1a1a;
+      }
+    </style>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-ink dark:text-slate-100 selection:bg-primary/20"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <!-- Top Navigation Bar -->
+      <header
+        class="sticky top-0 z-50 flex items-center justify-between border-b border-ink/5 bg-background-light/80 backdrop-blur-md px-6 md:px-20 py-4 dark:bg-background-dark/80 dark:border-slate-800"
+      >
+        <div class="flex items-center gap-12">
+          <div class="flex items-center gap-3">
+            <div class="size-6 text-primary">
+              <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  clip-rule="evenodd"
+                  d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-lg font-bold tracking-tight">Portfolio.dev</h2>
+          </div>
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Work</a>
+            <a class="text-sm font-medium text-primary underline underline-offset-4" href="#"
+              >Archive</a
+            >
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Notes</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-6">
+          <label
+            class="hidden lg:flex items-stretch bg-ink/5 dark:bg-slate-800 rounded-lg h-9 w-48 overflow-hidden group border border-transparent focus-within:border-primary/30"
+          >
+            <div class="flex items-center justify-center pl-3 text-muted-ink">
+              <span class="material-symbols-outlined text-[20px]">search</span>
+            </div>
+            <input
+              class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-muted-ink/60 px-2"
+              placeholder="Search archive..."
+              type="text"
+            />
+          </label>
+          <button
+            class="bg-primary text-white text-sm font-bold h-9 px-5 rounded-lg hover:brightness-110 transition-all"
+          >
+            Contact
+          </button>
+        </div>
+      </header>
+      <div
+        class="flex flex-1 flex-col md:flex-row max-w-[1200px] mx-auto w-full px-6 md:px-10 py-12 md:py-20 gap-16"
+      >
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-56 shrink-0">
+          <div class="sticky top-32 space-y-8">
+            <div>
+              <h3 class="text-xs uppercase tracking-[0.2em] font-bold text-muted-ink mb-6">
+                Archive Index
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    class="group flex items-center justify-between text-ink hover:text-primary transition-colors"
+                    href="#2024"
+                  >
+                    <span class="text-sm font-medium">2024</span>
+                    <span
+                      class="text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded"
+                      >12</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="group flex items-center justify-between text-muted-ink hover:text-primary transition-colors"
+                    href="#2023"
+                  >
+                    <span class="text-sm font-medium">2023</span>
+                    <span
+                      class="text-[10px] font-bold bg-ink/5 text-muted-ink px-1.5 py-0.5 rounded"
+                      >08</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="group flex items-center justify-between text-muted-ink hover:text-primary transition-colors"
+                    href="#2022"
+                  >
+                    <span class="text-sm font-medium">2022</span>
+                    <span
+                      class="text-[10px] font-bold bg-ink/5 text-muted-ink px-1.5 py-0.5 rounded"
+                      >15</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="group flex items-center justify-between text-muted-ink hover:text-primary transition-colors"
+                    href="#2021"
+                  >
+                    <span class="text-sm font-medium">2021</span>
+                    <span
+                      class="text-[10px] font-bold bg-ink/5 text-muted-ink px-1.5 py-0.5 rounded"
+                      >04</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="pt-8 border-t border-ink/5">
+              <p class="text-xs italic text-muted-ink leading-relaxed">
+                A curated collection of research, technical deep-dives, and philosophical musings on
+                the evolution of the web.
+              </p>
+              <button class="mt-4 flex items-center gap-2 text-xs font-bold text-primary group">
+                Subscribe via RSS
+                <span
+                  class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                  >rss_feed</span
+                >
+              </button>
+            </div>
+          </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="flex-1 max-w-[720px]">
+          <header class="mb-16">
+            <h1 class="font-serif text-5xl md:text-6xl italic mb-6">Chronicles</h1>
+            <p class="text-lg text-muted-ink leading-relaxed max-w-prose">
+              An exhaustive archive of written work ranging from architectural patterns to interface
+              experiments, organized chronologically for your convenience.
+            </p>
+          </header>
+          <!-- Year Section: 2024 -->
+          <section class="mb-20" id="2024">
+            <div class="flex items-baseline gap-4 border-b border-ink/10 pb-4 mb-10">
+              <h2 class="font-serif text-3xl italic">2024</h2>
+              <span class="text-muted-ink text-sm font-medium">The Year of Refinement</span>
+            </div>
+            <div class="space-y-16">
+              <!-- Article 1 -->
+              <article class="group">
+                <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-3">
+                  <time class="text-xs uppercase tracking-widest text-muted-ink font-bold shrink-0"
+                    >Jan 14</time
+                  >
+                  <h3
+                    class="font-serif text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors cursor-pointer leading-tight"
+                  >
+                    The Renaissance of Server-Side Rendering
+                  </h3>
+                </div>
+                <div class="md:pl-[5.5rem]">
+                  <p class="text-muted-ink leading-relaxed text-base md:text-lg mb-4 italic">
+                    Exploring how modern frameworks are bridging the gap between static generation
+                    and dynamic interactivity through novel streaming patterns.
+                  </p>
+                  <div
+                    class="flex items-center gap-4 text-xs font-bold tracking-wider uppercase text-ink/40"
+                  >
+                    <span>Architecture</span>
+                    <span class="size-1 bg-ink/20 rounded-full"></span>
+                    <span>8 min read</span>
+                  </div>
+                </div>
+              </article>
+              <!-- Article 2 -->
+              <article class="group">
+                <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-3">
+                  <time class="text-xs uppercase tracking-widest text-muted-ink font-bold shrink-0"
+                    >Feb 02</time
+                  >
+                  <h3
+                    class="font-serif text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors cursor-pointer leading-tight"
+                  >
+                    Designing for High-Density Data Interfaces
+                  </h3>
+                </div>
+                <div class="md:pl-[5.5rem]">
+                  <p class="text-muted-ink leading-relaxed text-base md:text-lg mb-4 italic">
+                    Strategies for maintaining clarity and cognitive load management when presenting
+                    complex multivariate datasets in financial applications.
+                  </p>
+                  <div
+                    class="flex items-center gap-4 text-xs font-bold tracking-wider uppercase text-ink/40"
+                  >
+                    <span>UI Design</span>
+                    <span class="size-1 bg-ink/20 rounded-full"></span>
+                    <span>12 min read</span>
+                  </div>
+                </div>
+              </article>
+              <!-- Article 3 -->
+              <article class="group">
+                <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-3">
+                  <time class="text-xs uppercase tracking-widest text-muted-ink font-bold shrink-0"
+                    >Mar 21</time
+                  >
+                  <h3
+                    class="font-serif text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors cursor-pointer leading-tight"
+                  >
+                    Linear Algebra for Creative Frontend Developers
+                  </h3>
+                </div>
+                <div class="md:pl-[5.5rem]">
+                  <p class="text-muted-ink leading-relaxed text-base md:text-lg mb-4 italic">
+                    A practical guide to matrices, vectors, and coordinate spaces for crafting
+                    immersive 3D experiences on the browser.
+                  </p>
+                  <div
+                    class="flex items-center gap-4 text-xs font-bold tracking-wider uppercase text-ink/40"
+                  >
+                    <span>Mathematics</span>
+                    <span class="size-1 bg-ink/20 rounded-full"></span>
+                    <span>15 min read</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+          <!-- Year Section: 2023 -->
+          <section class="mb-20 opacity-80" id="2023">
+            <div class="flex items-baseline gap-4 border-b border-ink/10 pb-4 mb-10">
+              <h2 class="font-serif text-3xl italic">2023</h2>
+              <span class="text-muted-ink text-sm font-medium">The Year of Convergence</span>
+            </div>
+            <div class="space-y-16">
+              <!-- Article 4 -->
+              <article class="group">
+                <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-3">
+                  <time class="text-xs uppercase tracking-widest text-muted-ink font-bold shrink-0"
+                    >Dec 10</time
+                  >
+                  <h3
+                    class="font-serif text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors cursor-pointer leading-tight"
+                  >
+                    Building a Truly Decoupled Design System
+                  </h3>
+                </div>
+                <div class="md:pl-[5.5rem]">
+                  <p class="text-muted-ink leading-relaxed text-base md:text-lg mb-4 italic">
+                    Why we moved away from framework-specific components toward custom elements and
+                    CSS variables for longevity.
+                  </p>
+                  <div
+                    class="flex items-center gap-4 text-xs font-bold tracking-wider uppercase text-ink/40"
+                  >
+                    <span>Design Systems</span>
+                    <span class="size-1 bg-ink/20 rounded-full"></span>
+                    <span>10 min read</span>
+                  </div>
+                </div>
+              </article>
+              <!-- Article 5 -->
+              <article class="group">
+                <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-3">
+                  <time class="text-xs uppercase tracking-widest text-muted-ink font-bold shrink-0"
+                    >Nov 22</time
+                  >
+                  <h3
+                    class="font-serif text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors cursor-pointer leading-tight"
+                  >
+                    Accessibility is a Core Performance Metric
+                  </h3>
+                </div>
+                <div class="md:pl-[5.5rem]">
+                  <p class="text-muted-ink leading-relaxed text-base md:text-lg mb-4 italic">
+                    Redefining "fast" to include the speed at which a user can complete a task using
+                    assistive technologies.
+                  </p>
+                  <div
+                    class="flex items-center gap-4 text-xs font-bold tracking-wider uppercase text-ink/40"
+                  >
+                    <span>A11y</span>
+                    <span class="size-1 bg-ink/20 rounded-full"></span>
+                    <span>6 min read</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+          <!-- Pagination/Footer -->
+          <footer class="pt-10 border-t border-ink/5 flex items-center justify-between">
+            <button
+              class="flex items-center gap-2 text-sm font-bold text-muted-ink opacity-50 cursor-not-allowed"
+            >
+              <span class="material-symbols-outlined">arrow_back</span>
+              Newer Posts
+            </button>
+            <div class="flex gap-2">
+              <span
+                class="size-8 flex items-center justify-center bg-primary text-white rounded font-bold text-xs"
+                >1</span
+              >
+              <button
+                class="size-8 flex items-center justify-center hover:bg-ink/5 rounded font-bold text-xs"
+              >
+                2
+              </button>
+              <button
+                class="size-8 flex items-center justify-center hover:bg-ink/5 rounded font-bold text-xs"
+              >
+                3
+              </button>
+            </div>
+            <button
+              class="flex items-center gap-2 text-sm font-bold text-ink hover:text-primary transition-colors"
+            >
+              Older Posts
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </footer>
+        </main>
+      </div>
+      <!-- Minimalist Footer -->
+      <footer class="mt-20 py-12 border-t border-ink/5 bg-ink/[0.02] dark:bg-slate-900/50">
+        <div
+          class="max-w-[1200px] mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          <div class="text-center md:text-left">
+            <p class="text-sm font-bold text-ink">© 2024 Portfolio.dev</p>
+            <p class="text-xs text-muted-ink mt-1">Set in Lexend and Lora. Built with intent.</p>
+          </div>
+          <div class="flex gap-8">
+            <a
+              class="text-xs uppercase font-bold tracking-widest text-muted-ink hover:text-primary transition-colors"
+              href="#"
+              >Twitter</a
+            >
+            <a
+              class="text-xs uppercase font-bold tracking-widest text-muted-ink hover:text-primary transition-colors"
+              href="#"
+              >GitHub</a
+            >
+            <a
+              class="text-xs uppercase font-bold tracking-widest text-muted-ink hover:text-primary transition-colors"
+              href="#"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
