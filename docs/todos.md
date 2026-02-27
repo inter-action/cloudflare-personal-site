@@ -1,7 +1,10 @@
 
 done:
+- why cors is needed, rm it on before publish
+- refactoring fe codes, split it to different file 
+- remove uneccessary workers under functions
+- add ability to generate static contents.
 
 pending:
-- refactoring fe codes, split it to different file 
 - add cloudflare skills
-- why cors is needed, rm it
+- overhaul design, create a design system
