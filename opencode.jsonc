@@ -10,8 +10,9 @@
       "grep *": "allow",
       "rg *": "allow",
       "ls *": "allow",
+      "mkdir -p *": "allow",
       // deny
       "rm *": "ask",
     },
-  }
+  },
 }
