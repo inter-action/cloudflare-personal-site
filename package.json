@@ -9,8 +9,10 @@
     "dev:vite": "vite",
     "dev:worker": "wrangler pages dev dist --port 8787",
     "build:fe": "vite build",
+    "build:blog": "tsx scripts/generate-blog.ts",
+    "build": "npm run build:fe && npm run build:blog",
     "preview:prod": "wrangler pages dev dist --port 8787",
-    "deploy": "npm run build:fe && wrangler pages deploy dist",
+    "deploy": "npm run build && wrangler pages deploy dist",
     "lint": "prettier --write .",
     "ts:check": "tsc -p tsconfig.cloudflare.json",
     "fmt": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"api/**/*.ts\""
@@ -33,7 +35,9 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.469.0",
+    "marked": "^17.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.6.0",
@@ -41,6 +45,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241231.0",
+    "@types/node": "^25.3.2",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
@@ -49,6 +54,7 @@
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.21.0",
     "typescript": "^5.7.3",
     "vite": "^6.0.7",
     "wrangler": "^4.68.1"

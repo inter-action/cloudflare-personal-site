@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - {{postCount}} Posts</title>
+    <meta name="description" content="Blog posts and articles" />
+    <link rel="stylesheet" href="/assets/blog/blog.css" />
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="blog-header">
+        <h1 class="blog-title">Blog</h1>
+        <p class="blog-subtitle">Thoughts, tutorials, and insights</p>
+      </header>
+
+      <ul class="post-list">
+        {{posts}}
+      </ul>
+
+      <p class="post-count">{{postCount}} posts</p>
+    </div>
+    {{assets}}
+  </body>
+</html>
