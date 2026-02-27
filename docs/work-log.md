@@ -4,6 +4,7 @@
   - SSG blog content
   - mv build script in shell script
   - overhual design: create a light version
+  - add dark theme support
 
 - 2026-02-26
   - refactoring routes
