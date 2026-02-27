@@ -1,7 +1,7 @@
 
 playing with cloudflare services while building.
 
-would also try all sorts of vibe-coding techniques. primarily base on **opencode**.
+would also try all sorts of vibe-coding techniques. primarily use **opencode**.
 
 
 **[code is cheap, show me the promts](./llm/chat-histories/session-001-project-init.md)**

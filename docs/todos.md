@@ -8,3 +8,6 @@ done:
 pending:
 - add cloudflare skills
 - overhaul design, create a design system
+- blog page should have navigation back to home.
+- integrate with cloudflare CI/CD. build on push
+
