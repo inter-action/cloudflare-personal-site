@@ -6,6 +6,19 @@ would also try all sorts of vibe-coding techniques. primarily use **opencode**.
 
 **[code is cheap, show me the promts](./llm/chat-histories/session-001-project-init.md)**
 
+## features
+
+- a landing page
+- a responsive blog
+- support dark/light mode
+
+### cloudflare services usage checklist
+
+- [x] pages
+- [x] page functions
+
+
+
 ## dev
 
 see [AGENTS.md](./AGENTS.md)
@@ -14,14 +27,9 @@ see [AGENTS.md](./AGENTS.md)
 Run `npm run dev:init` to set up git hooks (from `scripts/setup-git-hooks.sh`).
 
 
-## cloudflare
+### cloudflare
 
 ```bash
 npx wrangler login
 ```
-
-### cloudflare services usage progress
-
-- [x] pages
-- [x] ...
 
