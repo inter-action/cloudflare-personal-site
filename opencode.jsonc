@@ -9,7 +9,7 @@
       "npm *": "allow",
       "grep *": "allow",
       "rg *": "allow",
-      "grep *": "allow",
+      "ls *": "allow",
       // deny
       "rm *": "ask",
     },
