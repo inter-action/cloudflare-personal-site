@@ -1,4 +1,8 @@
-export function onRequestGet(context: any) {
+import type { PagesFunction, Response as CfResponse } from '@cloudflare/workers-types';
+
+interface Env {}
+
+export const onRequestGet: PagesFunction<Env> = (context) => {
   return new Response(
     JSON.stringify({
       message: 'Hello from Cloudflare Workers!',
@@ -8,5 +12,5 @@ export function onRequestGet(context: any) {
     {
       headers: { 'Content-Type': 'application/json' },
     },
-  );
-}
+  ) as unknown as CfResponse;
+};
