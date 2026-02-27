@@ -11,7 +11,7 @@
       "rg *": "allow",
       "grep *": "allow",
       // deny
-      "rm *": "deny",
+      "rm *": "ask",
     },
   }
 }

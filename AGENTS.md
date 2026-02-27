@@ -19,9 +19,13 @@ npm run ts:check     # TypeScript check
 ## Code Style
 
 - **Prettier**: Semicolons, single quotes, 2 spaces, trailing commas (ES5), print width 100
-- **TypeScript**: Strict mode, path alias `@/*` → `src/*`
 - **Components**: PascalCase files, use CVA for variants, `cn()` from clsx/tailwind-merge for className merging
 - **Import order**: React → external libs → internal → types
+
+
+### typescript
+- Strict mode, path alias `@/*` → `src/*` under src folder
+- avoid using any, prefer unknown.
 
 ## File Structure
 
