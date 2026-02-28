@@ -5,6 +5,7 @@ import { marked } from 'marked';
 import { fileURLToPath } from 'url';
 import { build } from 'vite';
 import postcss from 'postcss';
+// @ts-ignore
 import postcssImport from 'postcss-import';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
@@ -25,7 +26,7 @@ const INDEX_FILE = path.join(BLOG_SOURCE_DIR, 'index.html');
 const bundledAssets = '';
 
 function renderNavbar(activePath: string = '/'): string {
-  return renderToString(React.createElement(Navbar, { activePath, showThemeToggle: false }));
+  return renderToString(<Navbar activePath={activePath} showThemeToggle={false} />);
 }
 
 interface Post {
@@ -247,6 +248,94 @@ const DEFAULT_TEMPLATE = `<!DOCTYPE html>
 </body>
 </html>`;
 
+interface ArchiveItemProps {
+  year: string;
+  count: number;
+  isFirst: boolean;
+}
+
+function ArchiveItem({ year, count, isFirst }: ArchiveItemProps) {
+  return (
+    <li>
+      <a
+        className='group flex items-center justify-between transition-colors'
+        style={{ color: isFirst ? 'var(--text)' : 'var(--muted)' }}
+        href={`#${year}`}
+      >
+        <span className='text-sm font-medium'>{year}</span>
+        <span
+          className='text-[10px] font-bold px-1.5 py-0.5 rounded'
+          style={{
+            backgroundColor: isFirst ? 'var(--primary)' : 'var(--border)',
+            color: isFirst ? 'var(--bg)' : 'var(--muted)',
+            opacity: isFirst ? 0.15 : 1,
+          }}
+        >
+          {count}
+        </span>
+      </a>
+    </li>
+  );
+}
+
+interface PostItemProps {
+  post: Post;
+}
+
+function PostItem({ post }: PostItemProps) {
+  const dateStr = post.date
+    ? new Date(post.date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+    : '';
+
+  const tagsHtml =
+    post.tags.length > 0
+      ? post.tags.map((tag: string) => renderToString(<Badge>{tag}</Badge>)).join('')
+      : '';
+
+  return (
+    <article className='group'>
+      <h3 className='font-serif text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors cursor-pointer leading-tight mb-3'>
+        <a href={`/blog/${post.slug}`}>{post.title}</a>
+      </h3>
+      <div className='flex flex-wrap items-center gap-4'>
+        <time className='text-xs uppercase tracking-widest text-muted-ink font-bold'>
+          {dateStr}
+        </time>
+        {tagsHtml && (
+          <>
+            <span className='text-ink/20'>|</span>
+            <div className='flex flex-wrap gap-2' dangerouslySetInnerHTML={{ __html: tagsHtml }} />
+          </>
+        )}
+      </div>
+    </article>
+  );
+}
+
+interface YearSectionProps {
+  year: string;
+  posts: Post[];
+}
+
+function YearSection({ year, posts }: YearSectionProps) {
+  const postsHtml = posts.map((post) => renderToString(<PostItem post={post} />)).join('\n');
+
+  return (
+    <section className='mb-20' id={year}>
+      <div className='flex items-baseline gap-4 border-b border-subtle pb-4 mb-10'>
+        <h2 className='font-serif text-3xl italic'>{year}</h2>
+      </div>
+      <div className='space-y-12'>
+        <div dangerouslySetInnerHTML={{ __html: postsHtml }} />
+      </div>
+    </section>
+  );
+}
+
 async function buildBlog(): Promise<void> {
   console.log('Building blog...');
 
@@ -283,7 +372,7 @@ async function buildBlog(): Promise<void> {
 
     let tagsHtml = '';
     if (tags && tags.length > 0) {
-      tagsHtml = tags.map((tag) => renderToString(React.createElement(Badge, null, tag))).join('');
+      tagsHtml = tags.map((tag) => renderToString(<Badge>{tag}</Badge>)).join('');
     }
 
     const formattedDate = date
@@ -355,50 +444,23 @@ async function buildBlog(): Promise<void> {
 
   const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 
+  const archivesHtml = years
+    .map((year, index) => {
+      const count = postsByYear[year].length;
+      const isFirst = index === 0;
+      return renderToString(<ArchiveItem year={year} count={count} isFirst={isFirst} />);
+    })
+    .join('\n');
+
   const tocItems = years
     .map((year) => {
       const yearPosts = postsByYear[year];
-      const postsHtml = yearPosts
-        .map((post) => {
-          const dateStr = post.date
-            ? new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              })
-            : '';
-
-          const tagsHtml =
-            post.tags.length > 0
-              ? post.tags
-                  .map((tag: string) => renderToString(React.createElement(Badge, null, tag)))
-                  .join('')
-              : '';
-
-          return `<article class="group">
-      <h3 class="font-serif text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors cursor-pointer leading-tight mb-3">
-        <a href="/blog/${post.slug}">${post.title}</a>
-      </h3>
-      <div class="flex flex-wrap items-center gap-4">
-        <time class="text-xs uppercase tracking-widest text-muted-ink font-bold">${dateStr}</time>
-        ${tagsHtml ? `<span class="text-ink/20">|</span><div class="flex flex-wrap gap-2">${tagsHtml}</div>` : ''}
-      </div>
-    </article>`;
-        })
-        .join('\n');
-
-      return `<section class="mb-20" id="${year}">
-  <div class="flex items-baseline gap-4 border-b border-subtle pb-4 mb-10">
-    <h2 class="font-serif text-3xl italic">${year}</h2>
-  </div>
-  <div class="space-y-12">
-    ${postsHtml}
-  </div>
-</section>`;
+      return renderToString(<YearSection year={year} posts={yearPosts} />);
     })
     .join('\n');
 
   indexContent = indexContent.replace(/\{\{posts\}\}/g, tocItems);
+  indexContent = indexContent.replace(/\{\{archives\}\}/g, archivesHtml);
   indexContent = indexContent.replace(/\{\{postCount\}\}/g, String(posts.length));
   indexContent = indexContent.replace(/\{\{assets\}\}/g, bundledAssets);
 

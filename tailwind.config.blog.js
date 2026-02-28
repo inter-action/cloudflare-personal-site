@@ -6,7 +6,7 @@ export default {
     './blog/**/*.html',
     './blog/**/*.md',
     './src/**/*.{js,ts,jsx,tsx}',
-    './scripts/generate-blog.ts',
+    './scripts/generate-blog.tsx',
   ],
   theme: {
     ...baseConfig.theme,
