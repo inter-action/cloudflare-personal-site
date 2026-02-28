@@ -1,5 +1,11 @@
 # AGENTS.md - Agentic Coding Guidelines
 
+
+## AGENTS.md maintanence Guide line
+
+- only update existing section. don't add new unless been explicitly told so!
+
+
 ## Project Overview
 
 - **Frontend**: React 18 + TypeScript + Vite + Tailwind CSS
@@ -16,7 +22,9 @@ npm run deploy      # Build and deploy to Cloudflare Pages
 npm run preview:prod # Preview production build locally
 npm run ts:check    # TypeScript check (strict mode)
 npm run fmt         # Prettier format (src/**/*.ts, src/**/*.tsx)
-npm run build:blog  # to SSG blog contents.
+npm run compress:assets   # Compress images in place (Python script)
+npm run upload:assets    # Upload compressed images to R2
+npm run build:blog  # SSG blog contents (includes asset compression)
 ```
 
 ## Self Verfication
@@ -27,11 +35,6 @@ npm run build:fe # check build under `src` folder
 npm run build:blog  # check blog building
 npm run build # check all build
 ```
-
-## AGENTS.md maintanence Guide line
-
-- only update existing section. don't add new unless been explicitly told so!
-
 
 ## Code Style
 
@@ -48,7 +51,6 @@ npm run build # check all build
 - Use CVA (class-variance-authority) for component variants
 - Use `cn()` utility from `../utils` for className merging
 - Export props as `type` not `interface` (e.g., `export type ButtonProps = ...`)
-
 
 ### Error Handling
 
@@ -86,7 +88,6 @@ npx skills add https://github.com/vercel-labs/agent-skills
 
 ## Common Tasks
 
-
 ### Adding a New Component
 
 1. Create in appropriate directory under `src/components`
@@ -112,3 +113,21 @@ export function MyComponent({ className, variant, ...props }: MyComponentProps) 
   return <div className={cn(myComponentVariants({ variant }), className)} {...props} />;
 }
 ```
+
+## Blog Asset Publishing
+
+### Workflow
+
+Blog images are published to Cloudflare R2 in two steps:
+
+1. **Compress** (`npm run compress:assets`): In-place PNG compression + markdown update
+2. **Upload** (`npm run upload:assets`): Upload to R2 (can run independently)
+3. **SSG build** (`npm run build:blog`): URL rewiring (reads from temp JSON file)
+
+### Files
+
+- `scripts/publish_blog_assets.py` - Python script for in-place compression
+- `scripts/upload-blog-assets.tsx` - TypeScript script for R2 upload
+- `blog-assets.db` - SQLite tracking compressed images
+- `blog-assets.json` - JSON file in temp folder for SSG/Upload scripts
+- `publish.log` - Log file for compression operations

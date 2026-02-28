@@ -1,12 +1,17 @@
 todos:
+- cloudflare
+  - integrate with cloudflare CI/CD. build on push
+  - deploy blogs contents to R2, using sqlite & ffmpeg to compress images
+
 - add cloudflare skills
-- integrate with cloudflare CI/CD. build on push
 - Support I18N
 - add mermaid support
 - add syntax highlighting
 - add a self verification method for AI. 
   - the limitation are the free model that opencode provides is not a multimodal. lack image recognition capability
 - support bundling on a widget basis then add a global event-bus to communicate these island components
+- add a contact widget
+- currently the bucket exposed without limitation. find a way to restrict the access.
 
 
 

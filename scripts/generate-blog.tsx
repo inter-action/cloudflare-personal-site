@@ -1,4 +1,5 @@
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
@@ -24,6 +25,52 @@ const TEMPLATE_FILE = path.join(BLOG_SOURCE_DIR, '_template.html');
 const INDEX_FILE = path.join(BLOG_SOURCE_DIR, 'index.html');
 
 const bundledAssets = '';
+
+function loadEnvVars(): Record<string, string> {
+  const envPath = path.join(process.cwd(), '.dev.vars');
+  const vars: Record<string, string> = {};
+  if (fs.existsSync(envPath)) {
+    const content = fs.readFileSync(envPath, 'utf-8');
+    for (const line of content.split('\n')) {
+      const match = line.match(/^([^=]+)=(.*)$/);
+      if (match) {
+        vars[match[1].trim()] = match[2].trim();
+      }
+    }
+  }
+  return vars;
+}
+
+const envVars = loadEnvVars();
+
+const R2_PUBLIC_URL =
+  envVars.R2_PUBLIC_URL ||
+  process.env.R2_PUBLIC_URL ||
+  'https://imgs.jimiao.pics/personal-site-blog-assets/imgs';
+
+function rewireImageUrls(content: string): string {
+  const jsonPath = path.join(os.tmpdir(), 'blog-assets.json');
+  if (!fs.existsSync(jsonPath)) {
+    return content;
+  }
+
+  try {
+    const data = JSON.parse(fs.readFileSync(jsonPath, 'utf-8')) as { img_path: string }[];
+    const assets = new Map(data.map((a) => [path.basename(a.img_path), a.img_path]));
+
+    return content.replace(/!\[([^\]]*)\]\(([^)]+\.compressed\.[^)]+)\)/g, (_, alt, imgPath) => {
+      const filename = path.basename(imgPath);
+      const originalPath = assets.get(filename);
+      if (!originalPath) {
+        return `![${alt}](${imgPath})`;
+      }
+      const stem = path.basename(originalPath, path.extname(originalPath));
+      return `![${alt}](${R2_PUBLIC_URL}/${stem}.webp)`;
+    });
+  } catch {
+    return content;
+  }
+}
 
 function renderNavbar(activePath: string = '/'): string {
   return renderToString(<Navbar activePath={activePath} showThemeToggle={false} />);
@@ -356,7 +403,8 @@ async function buildBlog(): Promise<void> {
     const fullPath = path.join(BLOG_MD_DIR, relativePath);
     const { metadata, content: markdownContent } = getMetadata(fullPath);
     const processedMarkdown = stripFirstHeading(markdownContent);
-    const { html: htmlContent, toc: tocHtml } = parseMarkdownToHtml(processedMarkdown);
+    const rewiredMarkdown = rewireImageUrls(processedMarkdown);
+    const { html: htmlContent, toc: tocHtml } = parseMarkdownToHtml(rewiredMarkdown);
     const slug = generateSlug(relativePath);
     const title = metadata.title || getTitleFromContent(markdownContent);
     const date = metadata.date || null;

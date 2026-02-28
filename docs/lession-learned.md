@@ -1,0 +1,3 @@
+- I need buy some model. current free version greatly slow my efficiency.
+    - the free model shipped by opencode doesn't regconize img. and the network isn't stable. 
+- I need to be less involed in the process, let the model continuous check and fix bug by itself.

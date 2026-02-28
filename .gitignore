@@ -138,8 +138,14 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
+# python
+__pycache__
+
 # personal
 *.bak
 *-lock.json
 .wrangler
 .DS_Store
+blog-assets.db
+publish.log
+.dev.vars
