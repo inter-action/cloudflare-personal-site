@@ -1,7 +1,6 @@
 todos:
 - cloudflare
   - integrate with cloudflare CI/CD. build on push
-  - deploy blogs contents to R2, using sqlite & ffmpeg to compress images
 
 - add cloudflare skills
 - Support I18N

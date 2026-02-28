@@ -14,6 +14,7 @@ would also try all sorts of vibe-coding techniques. primarily use **opencode**.
 
 - [x] pages
 - [x] page functions
+- [x] R2, uploading assets
 
 ## dev
 

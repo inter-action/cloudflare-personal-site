@@ -1,4 +1,7 @@
 
+- 2026-03-01
+  - deploy blogs assets to R2, using sqlite & ffmpeg to compress images
+
 - 2026-02-28
   - invisible button on landing page
   - reword intro in landing page
