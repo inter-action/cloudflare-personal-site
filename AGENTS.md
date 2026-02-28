@@ -68,8 +68,21 @@ npm run build # check all build
 
 ## Skills
 
+### Skills usage
+
 - cloudflare: When working with Cloudflare services you're unfamiliar with, use the skill in `.opencode/skills/cloudflare`. It contains comprehensive documentation for:
 
+### Skills installation
+
+- use `npx skills add -a opencode <skill path>` to install skills, here some examples
+
+```
+# GitHub shorthand (owner/repo)
+npx skills add vercel-labs/agent-skills
+
+# Full GitHub URL
+npx skills add https://github.com/vercel-labs/agent-skills
+```
 
 ## Common Tasks
 

@@ -3,7 +3,9 @@
   "autoupdate": false,
   "permission": {
     "bash": {
+      // ask
       "*": "ask",
+      "npx skills *": "ask",
       // read allow
       "git *": "allow",
       "npm *": "allow",
