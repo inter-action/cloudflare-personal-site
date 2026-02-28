@@ -15,14 +15,15 @@ function App() {
   return (
     <div className='relative flex min-h-screen w-full flex-col'>
       <div className='layout-container flex h-full grow flex-col'>
-        <Navbar activePath={activePath} />
+        <Navbar activePath={activePath}/>
         <main className='flex-1'>
           <Hero />
           <div className='max-w-[1100px] mx-auto px-6'>
             <div className='h-px w-full bg-border-subtle' />
           </div>
           <Skills />
-          <BlogSection />
+          {/* hide it for now, need to get data somewhere */}
+          {/* <BlogSection /> */}
         </main>
         <Footer />
       </div>

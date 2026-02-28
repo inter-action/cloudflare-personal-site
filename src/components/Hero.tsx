@@ -8,19 +8,21 @@ export function Hero() {
         <div className='flex flex-col gap-8'>
           <div className='space-y-4'>
             <span className='text-xs font-bold uppercase tracking-[0.2em] text-primary'>
-              Full-Stack Developer
+              Kinda Full-Stack Developer
             </span>
             <h1 className='text-5xl md:text-7xl font-serif font-bold leading-[1.1]'>
               Hi, I'm <span className='text-primary'>Miao</span>
             </h1>
             <p className='text-lg md:text-xl font-display leading-relaxed max-w-md text-muted'>
-              I build fast, accessible, and beautiful web applications. Currently focused on
-              TypeScript, React, and Cloudflare infrastructure.
+              I build fast, accessible, and beautiful web applications. Primarily using reactjs tech stack on my professional job.
+              Currently focus on vibe coding related techniques.
             </p>
           </div>
-            <a href='/blog'>
+          <div>
+            <a href='/blog' className='inline-block'>
               <Button variant='primary'>Read My Blog</Button>
             </a>
+          </div>
         </div>
         <div className='relative flex justify-center items-center'>
           <div className='w-full rounded-sm overflow-hidden border border-custom p-4 flex items-center justify-center bg-surface'>
@@ -36,8 +38,8 @@ export function Hero() {
                 <div className='pl-4 text-muted'>
                   "frontend": ["React", "TypeScript", "Tailwind"],
                 </div>
-                <div className='pl-4 text-muted'>"backend": ["Node.js", "Cloudflare"],</div>
-                <div className='pl-4 text-muted'>"tools": ["Git", "Docker"]</div>
+                <div className='pl-4 text-muted'>"backend": ["Node.js", "Python", "Cloudflare"],</div>
+                <div className='pl-4 text-muted'>"DevOps": ["Docker", "K8s"]</div>
                 <div className='text-muted'>{'}'}</div>
                 <div className='text-green-500 mt-4 animate-pulse'>_</div>
               </div>

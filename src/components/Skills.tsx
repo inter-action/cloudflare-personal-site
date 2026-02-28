@@ -1,15 +1,27 @@
 const skills = [
   {
     category: 'Frontend',
-    items: ['React', 'TypeScript', 'Tailwind CSS', 'Vue'],
+    items: ['React', 'TypeScript', 'Tailwind CSS', 'Webpack'],
   },
   {
     category: 'Backend',
-    items: ['Node.js', 'Cloudflare Workers', 'PostgreSQL', 'REST APIs'],
+    items: ['Node.js', 'Python', 'Java', 'Go', 'Sql'],
   },
   {
     category: 'Tools & DevOps',
-    items: ['Git', 'Docker', 'AWS', 'CI/CD'],
+    items: ['Docker', 'AWS', 'K8S', 'CI/CD'],
+  },
+  {
+    category: 'Vibe',
+    items: ['Opencode'],
+  },
+  {
+    category: 'Editor',
+    items: ['vscode', 'nvim'],
+  },
+  {
+    category: 'Clis',
+    items: ['tmux', 'fzf', 'ripgrip', 'starship'],
   },
 ];
 
