@@ -142,3 +142,4 @@ vite.config.ts.timestamp-*
 *.bak
 *-lock.json
 .wrangler
+.DS_Store
