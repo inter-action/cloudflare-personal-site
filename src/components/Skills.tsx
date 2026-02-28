@@ -21,7 +21,7 @@ const skills = [
   },
   {
     category: 'Clis',
-    items: ['tmux', 'fzf', 'ripgrip', 'starship'],
+    items: ['tmux', 'fzf', 'ripgrip', 'starship', 'git-delta'],
   },
 ];
 

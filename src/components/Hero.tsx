@@ -25,7 +25,7 @@ export function Hero() {
           </div>
         </div>
         <div className='relative flex justify-center items-center'>
-          <div className='w-full rounded-sm overflow-hidden border border-custom p-4 flex items-center justify-center bg-surface'>
+          <div className='w-full rounded-sm overflow-hidden border border-custom p-2 flex items-center justify-center bg-surface'>
             <div className='w-full h-full border border-custom flex items-center justify-center relative bg-background-light dark:bg-background-dark'>
               <div className='absolute inset-0 opacity-5 flex items-center justify-center'>
                 <Terminal className='w-32 h-32' />
